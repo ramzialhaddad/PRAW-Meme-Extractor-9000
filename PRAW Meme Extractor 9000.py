@@ -16,6 +16,13 @@ new_memes = sub_reddit.new(limit=1)
 
 #So the loop runs forever
 while True:
+	#Creates a new instance of 'reddit'
+	reddit = praw.Reddit(client_id='your client id',
+                     client_secret='super secret client code', password='your password',
+                     user_agent='anything can be here', username='your username')
+
+	#Defining what subreddit we want to grab fresh memes from
+	sub_reddit = reddit.subreddit("ProgrammerHumor")
 	new_memes = sub_reddit.new(limit=1)
 	#iterates in the array thing created by new_memes
 	for submission in new_memes:
